@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body id="corpo">
+    <header>
+        <nav id="navbar">
+            <ul type="">
+                <li><a href="#home">Inicio</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <main class="principal">
+        <h1 id="titulo">Como o IMC faz mal</h1>
+        
+
+    </main>
+
+
+
+    <section class="calc">
+        <div class="c1"></div>
+        <h2 id="info">Índice de Massa Corporal</h1>
+
+            <label id="value" for="altura">Altura:</label>
+            <input type="number" name="altura" id="altura">
+
+            <label id="value2" for="peso"> Peso (kg):</label>
+            <input type="number" name="peso" id="peso">
+            <div class="c2">
+                <button id="imc" onclick="calcImc()"> Calcular IMC </button>
+
+                <p id="letras">Seu índice de massa corporal é: <span id="resultado"></span></p>
+            </div>
+    </section>
+
+    <button class="button mudaCor" onclick="mudaCor()">Muda as Cores</button>
+
+    <script>
+        function calcImc() {
+            const altura = document.getElementById("altura").value;
+
+            const peso = document.getElementById("peso").value;
+
+            const resultado = peso / (altura ** 2);
+
+            document.getElementById("resultado").textContent = resultado.toFixed(2);
+
+
+        }
+
+        function mudaCor() {
+            const corpo = document.getElementById("corpo");
+            const info = document.getElementById("info");
+            const value = document.getElementById("value")
+            const value2 = document.getElementById("value2")
+
+            info.style.color = info.style.color === "white" ? "black" : "white";
+
+            corpo.style.backgroundColor = corpo.style.backgroundColor === "black" ? "white" : "black";
+
+            letras.style.color = letras.style.color === "white" ? "black" : "white";
+
+            value.style.color = value.style.color === "white" ? "black" : "white";
+
+            value2.style.color = value2.style.color === "white" ? "black" : "white";
+
+        }
+    </script>
+</body>
+
+</html>
